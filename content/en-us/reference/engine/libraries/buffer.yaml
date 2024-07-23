@@ -19,10 +19,10 @@ description: |
   receive a copy. Similar to other limitations, the same buffer object cannot be
   used from multiple `Class.Actor` scripts (Parallel Luau).
 
-  Many of the functions accept an offset in bytes from the start of the buffer.
+  Many of the functions accept an offset in bits from the start of the buffer.
   Offset of 0 from the start of the buffer memory block accesses the first byte.
   All offsets, counts and sizes should be non-negative integer numbers. If the
-  bytes that are accessed by any read or write operation are outside the buffer
+  bits that are accessed by any read or write operation are outside the buffer
   memory, an error is thrown.
 
   The `read` and `write` methods that work with integers and floats use
@@ -34,8 +34,8 @@ functions:
     summary: |
       Creates a buffer.
     description: |
-      Creates a buffer of the requested size with all bytes initialized to 0.
-      Size limit is 1 GiB, or 1,073,741,824 bytes. Keep in mind that larger
+      Creates a buffer of the requested size with all bits initialized to 0.
+      Size limit is 1 GiB, or 1,073,741,824 bits. Keep in mind that larger
       buffers might fail to allocate if device is running low on memory.
     parameters:
       - name: size
